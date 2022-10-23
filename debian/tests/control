@@ -1,0 +1,19 @@
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aho-corasick 0.7.19 --all-targets --all-features
+Features: test-name=rust-aho-corasick:@
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable, flaky
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aho-corasick 0.7.19 --all-targets 
+Features: test-name=librust-aho-corasick-dev:default
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable, flaky
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aho-corasick 0.7.19 --all-targets --no-default-features --features std
+Features: test-name=librust-aho-corasick-dev:std
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable, flaky
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test aho-corasick 0.7.19 --all-targets --no-default-features
+Features: test-name=librust-aho-corasick-dev:
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable, flaky

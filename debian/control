@@ -1,0 +1,42 @@
+Source: rust-aho-corasick
+Section: rust
+Priority: optional
+Build-Depends: debhelper (>= 12),
+ dh-cargo (>= 25),
+ cargo:native <!nocheck>,
+ rustc:native <!nocheck>,
+ libstd-rust-dev <!nocheck>,
+ librust-memchr-2+std-dev (>= 2.4.0-~~) <!nocheck>,
+ librust-memchr-2-dev (>= 2.4.0-~~) <!nocheck>
+Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Uploaders:
+ Sylvestre Ledru <sylvestre@debian.org>,
+ Wolfgang Silbermayr <wolfgang@silbermayr.at>
+Standards-Version: 4.5.1
+Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/aho-corasick]
+Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/aho-corasick
+Homepage: https://github.com/BurntSushi/aho-corasick
+Rules-Requires-Root: no
+
+Package: librust-aho-corasick-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ librust-memchr-2+std-dev (>= 2.4.0-~~),
+ librust-memchr-2-dev (>= 2.4.0-~~)
+Provides:
+ librust-aho-corasick+default-dev (= ${binary:Version}),
+ librust-aho-corasick+std-dev (= ${binary:Version}),
+ librust-aho-corasick-0-dev (= ${binary:Version}),
+ librust-aho-corasick-0+default-dev (= ${binary:Version}),
+ librust-aho-corasick-0+std-dev (= ${binary:Version}),
+ librust-aho-corasick-0.7-dev (= ${binary:Version}),
+ librust-aho-corasick-0.7+default-dev (= ${binary:Version}),
+ librust-aho-corasick-0.7+std-dev (= ${binary:Version}),
+ librust-aho-corasick-0.7.19-dev (= ${binary:Version}),
+ librust-aho-corasick-0.7.19+default-dev (= ${binary:Version}),
+ librust-aho-corasick-0.7.19+std-dev (= ${binary:Version})
+Description: Fast multiple substring searching - Rust source code
+ This package contains the source for the Rust aho-corasick crate, packaged by
+ debcargo for use with cargo and dh-cargo.

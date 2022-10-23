@@ -1,0 +1,13 @@
+overlay = "."
+uploaders = [
+  "Sylvestre Ledru <sylvestre@debian.org>",
+  "Wolfgang Silbermayr <wolfgang@silbermayr.at>",
+]
+collapse_features = true
+
+[packages.bin]
+section = "utils"
+
+[packages.lib]
+# src/lib.rs: compile_error!("`std` feature is currently required to build this crate");
+test_is_broken = true
